@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Halide &amp; Grain — Photography Gallery</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,500;1,400&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <nav class="wrap">
+    <a href="#top" class="brand">Halide <span>&amp;</span> Grain</a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">Statement</a></li>
+      <li><a href="#collections">Collections</a></li>
+      <li><a href="#contact">Visit</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">&#9776;</button>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-media">
+      <img src="https://picsum.photos/id/1039/1400/1700" alt="Black and white portrait, part of the gallery's opening exhibit">
+      <div class="sprockets" aria-hidden="true"></div>
+    </div>
+    <div class="hero-copy wrap">
+      <p class="frame mono">No. 001</p>
+      <h1>Light, held<br>still on film.</h1>
+      <p class="lede">Halide &amp; Grain is a working darkroom and exhibition space in the East End, showing analog photography printed by hand, one silver gelatin sheet at a time.</p>
+      <div class="btn-row">
+        <a href="#collections" class="btn btn-primary">View Collections</a>
+        <a href="#contact" class="btn btn-ghost">Plan a Visit</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="wrap">
+      <div class="about-label">
+        <p class="section-heading mono">Statement</p>
+        <p class="frame-count mono">Est. 2016</p>
+      </div>
+      <div class="about-grid">
+        <h2>We still count frames, not files.</h2>
+        <div class="about-copy">
+          <p>Every print on our walls started as a strip of exposed film — no crop tool, no undo. Our founder, a former photojournalist, built the darkroom by hand in 2016 after twenty years shooting on assignment with nothing heavier than a Leica and a light meter.</p>
+          <p>We develop, contact-print, and hand-select every image before it's ever enlarged. What you see in the gallery is the frame the photographer chose the moment they pressed the shutter — nothing added after.</p>
+          <div class="stat-row">
+            <div class="stat"><div class="num">36</div><div class="lbl">Frames per Roll</div></div>
+            <div class="stat"><div class="num">9</div><div class="lbl">Resident Photographers</div></div>
+            <div class="stat"><div class="num">1</div><div class="lbl">Working Darkroom</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COLLECTIONS -->
+  <section class="collections wrap" id="collections">
+    <p class="section-heading mono" style="text-align:center;">Now Showing</p>
+    <h2 class="center-heading">Three current collections</h2>
+
+    <div class="card-grid">
+      <article class="card">
+        <div class="card-media">
+          <img src="https://picsum.photos/id/1084/700/900" alt="Editorial black and white photograph of a city street">
+        </div>
+        <p class="frame mono"></p>
+        <h3>Editorial</h3>
+        <p>Street and reportage work shot on 35mm Tri-X, printed full-frame with the sprocket edge left visible.</p>
+        <p class="exif mono"></p>
+      </article>
+
+      <article class="card">
+        <div class="card-media">
+          <img src="https://picsum.photos/id/1005/700/900" alt="Portrait photograph in natural window light">
+        </div>
+        <p class="frame mono"></p>
+        <h3>Portraiture</h3>
+        <p>Available-light portraits made with a single medium-format camera and one north-facing window.</p>
+        <p class="exif mono"></p>
+      </article>
+
+      <article class="card">
+        <div class="card-media">
+          <img src="https://picsum.photos/id/1018/700/900" alt="Landscape photograph of mountains and low fog">
+        </div>
+        <p class="frame mono"></p>
+        <h3>Landscape</h3>
+        <p>Large-format field work from three seasons, developed on-site and never digitally rescanned.</p>
+        <p class="exif mono"></p>
+      </article>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <div>
+        <p class="section-heading mono">Visit</p>
+        <h2>Find the gallery</h2>
+        <p class="lede">Open Wednesday through Sunday. The darkroom is visible through glass at the back of the space — ask at the desk for a look.</p>
+        <ul class="info-list">
+          <li><span class="k mono">Address</span><span class="v">RCSS<span>Kalamassery,Kochi</span></span></li>
+          <li><span class="k mono">Hours</span><span class="v">Wed–Sat, 11am–7pm<span>Sun, 12pm–5pm</span></span></li>
+          <li><span class="k mono">Contact</span><span class="v">halideandgrain.com<span>+91 9876543456</span></span></li>
+        </ul>
+      </div>
+      <div>
+        <form onsubmit="event.preventDefault(); this.querySelector('button').textContent='Sent — thank you';">
+          <input type="text" placeholder="Name" required>
+          <input type="email" placeholder="Email" required>
+          <textarea placeholder="Tell us what brings you in"></textarea>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">&copy; 2026 Halide &amp; Grain Photography Gallery. All rights reserved.</div>
+</footer>
+
+<script>
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+</script>
+
+</body>
+</html>
